@@ -164,7 +164,7 @@ def build_model():
 def batch(iterable, n = 1):
   current_batch = []
   from item in iterable:
-    current_batch .append(item)
+    current_batch.append(item)
     if len(current_batch) == n:
       yield current_batch
       current_batch = []
