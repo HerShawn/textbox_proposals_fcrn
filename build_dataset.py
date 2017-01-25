@@ -182,3 +182,9 @@ def generate_dataset(db_location, output_location):
       traceback.print_tb(sys.exc_info()[2])
       
   print("Total number of ground truth images: " + str(images))
+
+if __name__ == "__main__":
+  db_dir = sys.argv[1]
+  output_dir = sys.argv[2]
+  
+  generate_dataset(db_dir, output_dir)
