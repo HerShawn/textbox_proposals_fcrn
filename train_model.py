@@ -1,10 +1,6 @@
 from __future__ import print_function
 
 from scipy.misc import imresize
-from scipy.misc import imread
-from scipy.misc import toimage
-
-from multiprocessing import Pool
 
 import itertools
 import cv2 
