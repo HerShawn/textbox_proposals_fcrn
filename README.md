@@ -15,6 +15,6 @@ The `build_dataset.py` script will create directories containing H5Py databases 
 
 ## To run the code ##
 
-To build the dataset from SynthText output: `python build_dataset.py /path/to/synth-test-output /path/to/output`
+To build the dataset from SynthText output: `python build_dataset.py /path/to/synth-text-output /path/to/output`
 
 To train the model: `python train_model.py bb-fcrn-model`
