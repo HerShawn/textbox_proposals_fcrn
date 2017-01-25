@@ -3,7 +3,7 @@
 An implementation of the Fully Convolutional Regression Neural Network (FCRN) Framework in Keras as described by Ankush Gupta et. al in the paper [Synthetic Data for Text Localisation in Natural Images](https://arxiv.org/abs/1604.06646)
 
 
-Provided in this codebase are python scripts for building a training dataset to train the FCRN and the script to initiate the training of a model which uses the Keras deep learning framework on top of Theano. 
+Provided in this codebase are python scripts for building a training dataset to train the FCRN and the script to initiate the training of a model which uses the Keras deep learning framework on top of Theano.
 
 
 ## Training Data Format ##
