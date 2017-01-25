@@ -1,9 +1,6 @@
 from __future__ import print_function
 
-from scipy.misc import imresize
-
 import itertools
-import cv2 
 import h5py
 import numpy as np
 import os
