@@ -46,12 +46,8 @@ def calc_pose(tl, tr, bl, br):
   # Calculate theta
   theta = get_rotation(tl, tr)
   
-  if theta != 0.0:
-    w = math.sqrt(math.pow(tr[0] - tl[0], 2) / math.pow(tr[1] - tl[1], 2))
-    h = math.sqrt(math.pow(br[0] - tr[0], 2) / math.pow(br[1] - tr[1], 2))
-  else:
-    w = tr[0] - tl[0]
-    h = bl[1] - tl[1]
+  w = tr[0] - tl[0]
+  h = bl[1] - tl[1]
     
   return ( (x-u) / delta, (y-v) / delta, float(w) / W, float(h) / H, math.cos(theta), math.sin(theta))
 
