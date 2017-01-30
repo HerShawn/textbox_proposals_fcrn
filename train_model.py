@@ -43,14 +43,15 @@ def fcrn_loss(y_true, y_pred):
   images = []
   
   for i in range(0, mini_batch_size):
-    c = y_true[i, 6, :,:].reshape((1, delta, delta))   # The last feature map in the true vals is the 'c' matrix
+    c_true = y_true[i, 6, :,:].reshape((1, delta, delta))   # The last feature map in the true vals is the 'c' matrix
+
+    c_discounted = T.set_subtensor(c_true[(c_true<=0.0).nonzero()], d.get_value())
     
-    final_c = (c * loss[i,6,:,:])
+    final_c = (c_discounted * loss[i,6,:,:])
     
-    c = T.set_subtensor(c[(c<=0.0).nonzero()], d.get_value())
     
     # Element-wise multiply of the c feature map against all feature maps in the loss
-    final_loss_parts = [(c * loss[i, j, :, :].reshape((1, delta, delta))).reshape((1, delta, delta)) for j in range(0, 6)]
+    final_loss_parts = [(c_true * loss[i, j, :, :].reshape((1, delta, delta))).reshape((1, delta, delta)) for j in range(0, 6)]
     final_loss_parts.append(final_c)
     
     images.append(K.concatenate(final_loss_parts))
