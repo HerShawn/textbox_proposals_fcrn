@@ -71,7 +71,7 @@ def build_model():
     model = Sequential()
     
     # Layer 1
-    model.add(ZeroPadding2D(padding = (2, 2), input_shape=(1, img_rows, img_cols)))
+    model.add(ZeroPadding2D(padding = (2, 2), input_shape=(1, None, None)))
     model.add(Convolution2D(64, 5, 5))
     model.add(BatchNormalization(axis = 1))
     model.add(Activation('relu'))
